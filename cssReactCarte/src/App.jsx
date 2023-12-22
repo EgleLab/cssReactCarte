@@ -1,30 +1,18 @@
-import { useState } from 'react';
-import './App.css';
-import Home from "./pages/Home";
-import Card from "./pages/Card";
-import CardMom from "./pages/CardMom";
+import { Link } from "react-router-dom";
 
+import "./App.css";
 
 function App() {
-  const [currentLocation, setCurrentLocation] = useState("/");
-
   return (
     <>
-       <nav>
-          <button onClick={() => setCurrentLocation("/Card")} type="button">
-            Get your card!
-          </button>
-          <button onClick={() => setCurrentLocation("/CardMom")} type="button">
-            Get another for your mom 
-          </button>
-       </nav>
-      <main>
-          {currentLocation === "/" && <Home />}
-          {currentLocation === "/Card" && <Card />}
-          {currentLocation === "/CardMom" && <CardMom/>}
-      </main>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/card">Card</Link>
+        <Link to="/cardmom">CardMom</Link>
+      </nav>
+      <main>???</main>
     </>
-  )
+  );
 }
 
 export default App;
