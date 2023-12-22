@@ -1,5 +1,24 @@
+import { useNavigate } from 'react-router-dom';
+
 function CardMom () {
-    return <h1>Mom's card</h1>;
-}
+
+        const navigate = useNavigate();
+        const handleClick = (page) => {
+            navigate(page);
+          };
+          return (
+            <div>
+                
+                    <h1>Hi Mom!</h1>
+                    <button onClick={()=>handleClick('/')}>
+                    Go home   
+                    </button>
+                
+                    
+                   
+           </div>
+            );
+        
+        };
 
 export default CardMom;
