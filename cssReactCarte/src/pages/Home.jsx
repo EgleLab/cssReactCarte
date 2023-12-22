@@ -1,20 +1,26 @@
 
+
+import { useNavigate } from 'react-router-dom';
+
 function Home () {
-    const handleClick = () => {
-        //console.log()
-    };
+    const navigate = useNavigate();
+    const handleClick = (page) => {
+        navigate(page);
+      };
   
     return (
-    <>
-     <h1>Surprise</h1>
-     <button onClick={handleClick}>
-    Get your card!    
-    </button>
-    
-    <button onClick={handleClick}> 
-    Get a card for your mom    
-    </button>  
-   </>
+    <div>
+            <h1>Surprise</h1>
+            
+            <button onClick={()=>handleClick('/card')}>
+            Get your card!    
+            </button>
+        
+            
+            <button onClick={()=>handleClick('/cardMom')}> 
+            Get a card for your mom    
+            </button>  
+   </div>
     );
 
 };
